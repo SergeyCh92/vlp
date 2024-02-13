@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "vlp"
+version = "0.1.0"
+description = ""
+authors = ["Харицкий Данил Константинович <Khlive.ftf@gmail.com>"]
+readme = "README.md"
+packages = [{include = "vlp_service"}]
+exclude = [
+            "vlp_service/certs",
+            "vlp_service/main.py",
+            "vlp_service/services",
+            "vlp_service/settings.py"
+        ]
+
+[tool.poetry.dependencies]
+python = "3.11.1"
+
+aiohttp = "3.9.3"
+pydantic-settings = "2.1.0"
+
+[tool.poetry.group.service.dependencies]
+scipy = "^1.11.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.1"
+flake8 = "^7.0.0"
+pytest = "^8.0.0"
+
+[tool.poetry.group.custom.dependencies]
+common-core = {path = "../common/common_core", develop = true}
+common-rabbit = {path = "../common/common_rabbit", develop = true}
+gateway-service = {path = "../gateway_service", develop = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

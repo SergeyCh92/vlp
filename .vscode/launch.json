@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "VLP: start",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/vlp_service/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
